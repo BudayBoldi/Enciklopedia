@@ -34,22 +34,21 @@
       </div>
     </center>
     <br><br>
-    <b class="p1">A nagy szovjet Enciklopédija</b>
     <?php
     $file = fopen("./wiki.txt", "r") or die("ERROR!");
-    $sec = 2;
+    $num = 1;
     
     while(!feof($file)) {
         $line = fgets($file);
 
         if($line !== "\n") {
-	    if ($sec % 2 == 0) {
-                echo "<p class='p2' ID='" . $sec . "'>" . $line . "</p>";
+	    if ($num % 2 == 0) {
+                echo "<p class='p2' ID='" . $num . "'>" . $line . "</p>";
 	    } else {
-		echo "<p class='p1' ID='" . $sec . "' onclick='clicked(this.id)'>" . $line . "</p>";
+		echo "<p class='p1' ID='" . $num . "' onclick='clicked(this.id)'>" . $line . "</p>";
 	    }
         } else {
-            $sec += 1;
+            $num += 1;
         }
     }
     
