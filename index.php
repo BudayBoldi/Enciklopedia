@@ -41,12 +41,12 @@
     while(!feof($file)) {
         $line = fgets($file);
 
-        if($line !== "\n") {
-	    if ($num % 2 == 0) {
+        if($line !== "\n" AND $line !== "\r\n") {
+	    	if ($num % 2 == 0) {
                 echo "<p class='p2' ID='" . $num . "'>" . $line . "</p>";
-	    } else {
-		echo "<p class='p1' ID='" . $num . "' onclick='clicked(this.id)'>" . $line . "</p>";
-	    }
+	    	} else {
+			echo "<p class='p1' ID='" . $num . "' onclick='clicked(this.id)'>" . $line . "</p>";
+	    	}
         } else {
             $num += 1;
         }
@@ -58,3 +58,4 @@
     <script language="JScript" src="./dtab.js"></script>
     </body>
 </html>
+
